@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nash-BackEnd", "Nash-BackEnd\Nash-BackEnd.csproj", "{B506BA43-AB67-402A-BEA9-E4CC2F4E7873}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nash-BackEnd", "Nash-BackEnd\Nash-BackEnd.csproj", "{B506BA43-AB67-402A-BEA9-E4CC2F4E7873}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nash.Domain", "Nash.Domain\Nash.Domain.csproj", "{6678A744-6E8F-4B5A-A8A7-13EC4FE0CF50}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{B506BA43-AB67-402A-BEA9-E4CC2F4E7873}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B506BA43-AB67-402A-BEA9-E4CC2F4E7873}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B506BA43-AB67-402A-BEA9-E4CC2F4E7873}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6678A744-6E8F-4B5A-A8A7-13EC4FE0CF50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6678A744-6E8F-4B5A-A8A7-13EC4FE0CF50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6678A744-6E8F-4B5A-A8A7-13EC4FE0CF50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6678A744-6E8F-4B5A-A8A7-13EC4FE0CF50}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
