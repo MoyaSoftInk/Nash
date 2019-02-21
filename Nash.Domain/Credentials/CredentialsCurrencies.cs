@@ -3,6 +3,9 @@
     using Nash.Domain.Enums;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Credential currencies is a dictionary what contain all base url and key to access request.
+    /// </summary>
     public class CredentialsCurrencies
     {
         public IDictionary<ExchangerEnum, CredentialsApi> KeyValues;
@@ -17,6 +20,9 @@
         }
     }
 
+    /// <summary>
+    /// Credential Api class base of Credential currencies.
+    /// </summary>
     public class CredentialsApi
     {
         public CredentialsApi(string key, string urlBase)

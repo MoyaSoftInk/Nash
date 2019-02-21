@@ -1,5 +1,8 @@
 ﻿namespace Nash.Domain.Responses
 {
+    /// <summary>
+    /// Represent the response from NashApi.
+    /// </summary>
     public class NashResponse
     {
         public NashResponse() { }

@@ -3,6 +3,9 @@
     using Nash.Domain.Models;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Represent the response from EstadisticasBcraApi
+    /// </summary>
     public class EstadisticasBcraResponse
     {
         public EstadisticasBcraResponse()

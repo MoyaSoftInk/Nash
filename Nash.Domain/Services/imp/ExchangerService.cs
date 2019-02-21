@@ -12,6 +12,9 @@
     using System.Net.Http.Headers;
     using System.Threading.Tasks;
 
+    /// <summary>
+    /// the service provide all methods relationated with quote of currencies
+    /// </summary>
     public class ExchangerService : IExchangerService
     {
         private readonly CredentialsCurrencies credentialsCurrencies;
@@ -22,6 +25,12 @@
             this.credentialsCurrencies = new CredentialsCurrencies();
         }
 
+        /// <summary>
+        /// Get the quote of currency
+        /// </summary>
+        /// <param name="currencyName"></param>
+        /// <param name="currencyCode"></param>
+        /// <returns></returns>
         public async Task<NashResponse> GetQuote(CurrenciesNameEnum currencyName, CurrenciesCodeEnum currencyCode)
         {
 
@@ -46,6 +55,10 @@
             return nashResponse;
         }
 
+        /// <summary>
+        /// Get USD currency from estadisticasBcraApi
+        /// </summary>
+        /// <returns></returns>
         private async Task<EstadisticasBcraModel> GetQuoteFromEstadisticasBcraAsync()
         {
             try
@@ -76,6 +89,11 @@
            
         }
 
+        /// <summary>
+        /// Get the currency from CambiosTodayApi
+        /// </summary>
+        /// <param name="currenciesCode"></param>
+        /// <returns></returns>
         private async Task<CambioTodayModel> GetQuoteFromCambiosTodayAsync(CurrenciesCodeEnum currenciesCode)
         {
             try

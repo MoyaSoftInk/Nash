@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nash.Domain.Enums
+﻿namespace Nash.Domain.Enums
 {
+    /// <summary>
+    /// Currency Name
+    /// </summary>
     public enum CurrenciesNameEnum
     {
         dolar,

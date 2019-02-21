@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Nash.Domain.Models
+﻿namespace Nash.Domain.Models
 {
+    /// <summary>
+    /// Represent the response was return from Cambios.TodayAPI.
+    /// </summary>
     public class CambioTodayModel
     {
         public CambioTodayModel()
