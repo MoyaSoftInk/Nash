@@ -5,7 +5,7 @@ using Nash.Domain.Data;
 using Nash.Domain.HubConfiguration;
 using Nash.Domain.Services;
 using Nash.Domain.Services.imp;
-
+using System.Threading.Tasks;
 
 namespace Nash_BackEnd.Controllers
 {
@@ -26,9 +26,10 @@ namespace Nash_BackEnd.Controllers
         }
 
         
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
+            var result = await this.exchangerService.GetChartCurrencies();
+            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", result));
 
             return Ok(new { Message = "Request Completed" });
         }

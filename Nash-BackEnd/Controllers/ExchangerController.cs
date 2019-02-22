@@ -58,14 +58,6 @@
                 return BadRequest(ModelState);
             }
         }
-
-        [HttpGet]
-        [Route("cotizacion/get")]
-        public IActionResult Get()
-        {
-            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
-
-            return Ok(new { Message = "Request Completed" });
-        }
+        
     }
 }

@@ -55,6 +55,23 @@
             return nashResponse;
         }
 
+        public async Task<List<ChartModel>> GetChartCurrencies()
+        {
+            List<ChartModel> chartModels = new List<ChartModel>();
+
+            var quoteReal = await this.GetQuoteFromCambiosTodayAsync(CurrenciesCodeEnum.BRL);
+            var quoteEuro = await this.GetQuoteFromCambiosTodayAsync(CurrenciesCodeEnum.EUR);
+            var quoteDolar = await this.GetQuoteFromEstadisticasBcraAsync();
+
+            List<ChartCurrenciesModel> chartCurrencies = new List<ChartCurrenciesModel>();
+
+            chartModels.Add(new ChartModel() { Data = new List<decimal>() { decimal.Parse(quoteDolar.v) }, Label = "Dolar" });
+            chartModels.Add(new ChartModel() { Data = new List<decimal>() { decimal.Parse(quoteEuro.Result.Value) }, Label = "Euro" });
+            chartModels.Add(new ChartModel() { Data = new List<decimal>() { decimal.Parse(quoteReal.Result.Value) }, Label = "Real" });
+
+            return chartModels;
+        }
+
         /// <summary>
         /// Get USD currency from estadisticasBcraApi
         /// </summary>

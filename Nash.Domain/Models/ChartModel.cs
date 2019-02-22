@@ -4,12 +4,12 @@
 
     public class ChartModel
     {
-        public List<int> Data { get; set; }
+        public List<decimal> Data { get; set; }
         public string Label { get; set; }
 
         public ChartModel()
         {
-            Data = new List<int>();
+            Data = new List<decimal>();
         }
     }
 }
