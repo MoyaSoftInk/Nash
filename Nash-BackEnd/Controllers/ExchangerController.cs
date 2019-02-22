@@ -1,19 +1,25 @@
 ﻿namespace Nash_BackEnd.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.SignalR;
+    using Nash.Domain.Data;
     using Nash.Domain.Enums;
+    using Nash.Domain.HubConfiguration;
     using Nash.Domain.Responses;
     using Nash.Domain.Services;
+    using Nash.Domain.Services.imp;
     using System;
     using System.Threading.Tasks;
 
     public class ExchangerController : Controller
     {
         private readonly IExchangerService exchangerService;
+        private IHubContext<ChartHub> _hub;
 
-        public ExchangerController(IExchangerService exchangerService)
+        public ExchangerController(IExchangerService exchangerService, IHubContext<ChartHub> hub)
         {
             this.exchangerService = exchangerService;
+            _hub = hub;
         }
 
         /// <summary>
@@ -53,24 +59,13 @@
             }
         }
 
-        ///// <summary>
-        ///// Quote BRL
-        ///// </summary>
-        ///// <returns></returns>
-        //[HttpGet]
-        //[Route("cotizacion/")]
-        //public IActionResult GetCunrrencyBRL()
-        //{
+        [HttpGet]
+        [Route("cotizacion/get")]
+        public IActionResult Get()
+        {
+            var timerManager = new TimerManager(() => _hub.Clients.All.SendAsync("transferchartdata", DataManager.GetData()));
 
-        //    return Ok();
-        //}
-
-        //[HttpGet]
-        //[Route("cotizacion/dolar")]
-        //public IActionResult GetCunrrency()
-        //{
-
-        //    return Ok();
-        //}
+            return Ok(new { Message = "Request Completed" });
+        }
     }
 }

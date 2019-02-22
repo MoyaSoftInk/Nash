@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Nash.Domain.HubConfiguration;
 using Nash.Domain.Services;
 using Nash.Domain.Services.imp;
 using Swashbuckle.AspNetCore.Swagger;
@@ -21,7 +22,18 @@ namespace Nash_BackEnd
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSignalR();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            services.AddCors(options =>
+                {
+                    options.AddPolicy("CorsPolicy",
+                        builder => builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+                });
 
             services.AddTransient<IExchangerService, ExchangerService>();
 
@@ -55,9 +67,16 @@ namespace Nash_BackEnd
             });
 
             app.UseHttpsRedirection();
+            app.UseCors("CorsPolicy");
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<ChartHub>("/chart");
+            });
+
             app.UseMvc();
 
-          
+
 
         }
     }
