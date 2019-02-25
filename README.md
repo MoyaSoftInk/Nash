@@ -15,9 +15,8 @@ Pasos para correr la aplicación
    las peticiones son de tipo get
    
 3- dashboard en angular
-   por los momentos no se cargan los datos de las cotizaciones, sin embargo la tecnología SignalR está implementada, si ejecuta el proyecto
-   frontend (el backend debe estar levantado de lo contrario no funcionará) visualizará como interactua en tiempo real con fakedata. Solo hay que pasarle los datos
-   de las tres cotizaciones y estaría listo. Por motivos agenos tuve que salir de mi estación de trabajo, al regresar puedo terminarlo, por favor si están de acuerdo
-   pueden comunicarse conmigo, pido disculpas por ello.
+   1er paso - Ejecutar el backend
+   2do paso - Ejecutar el frontend usando ng serve --open en una cmd dentro de la carpeta Nash-FrontEnd
+   la pantalla se refresca cada 5 segundos, para ver las llamadas simplemente presione f12 y seleccione la pestana consola.
    
 Saludos!!
