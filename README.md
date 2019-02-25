@@ -18,5 +18,6 @@ Pasos para correr la aplicación
    1er paso - Ejecutar el backend
    2do paso - Ejecutar el frontend usando ng serve --open en una cmd dentro de la carpeta Nash-FrontEnd
    la pantalla se refresca cada 5 segundos, para ver las llamadas simplemente presione f12 y seleccione la pestana consola.
-   
+   Cabe destacar que los montos expresados en la gráfica y en las respuesta son en pesos Argentinos, por ejemplo la cotización del dolar es 35.5 ARS... 
+
 Saludos!!
