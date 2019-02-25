@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
       }]
     }
   };
-  public chartLabels: string[] = ['Real time Currency - Dirmod v1'];
+  public chartLabels: string[] = ['Real time Currency - Dirmod v1 - Los montos están expresados en pesos Argentinos'];
   public chartType: string = 'bar';
   public chartLegend: boolean = true;
   public colors: any[] = [{ backgroundColor: '#5491DA' }, { backgroundColor: '#E74C3C' }, { backgroundColor: '#82E0AA' }, { backgroundColor: '#E5E7E9' }];

@@ -120,7 +120,7 @@
 
                 CredentialsApi credentials = this.credentialsCurrencies.KeyValues[ExchangerEnum.CambioToday];
                 
-                string cambiosTodayURL = string.Format(credentials.URLBase, CurrenciesCodeEnum.USD.ToString("g"), currenciesCode.ToString("g"), credentials.Key);
+                string cambiosTodayURL = string.Format(credentials.URLBase, currenciesCode.ToString("g"), CurrenciesCodeEnum.ARS.ToString("g"), credentials.Key);
 
                 var response = await this.httpClient.GetAsync(cambiosTodayURL);
 

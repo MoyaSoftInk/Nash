@@ -7,6 +7,7 @@
     {
         USD,
         EUR,
-        BRL
+        BRL,
+        ARS
     }
 }
